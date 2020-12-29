@@ -16,15 +16,20 @@
  * specific language governing permissions and limitations
  * under the License.
  * */
-
 /// <summary>
 /// API戻り値の基底クラス
 /// </summary>
-public class ApiResultsBase : Codable
+public class ApiResultsBase : Decodable
 {
     /// <summary>
     /// 戻り値ステータスコード
     /// </summary>
-    var StatusCode : Int64
+    public var StatusCode : Int64
+    
+    /// ID
+    public var Id : Int64?
+    
+    /// メッセージ
+    public var Message : String?
     
 }

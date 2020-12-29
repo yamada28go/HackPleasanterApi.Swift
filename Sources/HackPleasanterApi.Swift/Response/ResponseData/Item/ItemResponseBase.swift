@@ -20,9 +20,51 @@
 /// <summary>
 /// 要素取得結果ベース
 /// </summary>
-public class ItemResponseBase   : Codable
+public class ItemResponseBase<ItemType : PleasanterItem> : Codable
 {
-    // 戻り値データ型
-    var  Data : [ItemRawData]?
+    //---
+    // APIとしての戻り値型
+    
+    // 戻り値データ型(APIとして取得さとれる値)
+    public var  Data : [ItemRawData]?
+    
+    enum CodingKeys: String, CodingKey {
+        case Data
+    }
+    
+    public required init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        Data = try? values.decode([ItemRawData].self, forKey: .Data)
+    }
+    
+    public  init()  {
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.unkeyedContainer()
+        if let data = Data{
+            for d in data {
+                try container.encode(d)
+            }
+        }
+    }
+    
+    //---
+    // ラッパー上でユーザーが操作する値
+    
+    // ユーザーが操作する値と同期させる
+    public func SetupDataItems(){
+        
+        if let items = self.Data{
+            self.DataItems = items.map( {ItemType( rawItem: $0)} )
+        }
+        
+    }
+    
+    // 外部からアクセスするデータ型
+    public var  DataItems : [ItemType]?
+    
+    // ラッパー上でユーザーが操作する値
+    
     
 }

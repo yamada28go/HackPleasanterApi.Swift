@@ -20,9 +20,6 @@
 /// <summary>
 /// 削除系統のAPI戻り値
 /// </summary>
-public class DeleteApiResults : Codable
+public class DeleteApiResults : ApiResultsBase
 {
-    var Id : Int64
-    var StatusCode : Int64
-    var Message : String
 }

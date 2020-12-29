@@ -18,6 +18,24 @@
  * */
 
 // 要素が1個のアイテムの戻り値
-public class SingleItemResponse : ItemResponseBase
+public class SingleItemResponse<ItemType : PleasanterItem> : ItemResponseBase<ItemType>
 {
+    // 要素にアクセスする
+    // Single系のAPIは1要素だけへのアクセスとなるはずなので
+    // 簡便にアクセスする方法を提供する
+    public var Element: ItemType? {
+        get {
+            // 値の返却
+            if let d = DataItems {
+                
+                if let v = d.first{
+                    
+                    return v
+                }
+            }
+            
+            return nil
+        }
+    }
+    
 }

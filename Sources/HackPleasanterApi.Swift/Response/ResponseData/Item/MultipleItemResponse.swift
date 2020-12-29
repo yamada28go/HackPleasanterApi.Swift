@@ -17,12 +17,7 @@
  * under the License.
  * */
 
-// 要素かn個のアイテムの戻り値
-/*
- class MultipleItemResponse : ItemResponseBase
- {
- var Offset : Int64
- var PageSize : Int64
- var TotalCount : Int64
- }
- */
+// 複数アイテムの戻り値型
+public class MultipleItemResponse<ItemType : PleasanterItem> : ItemResponseBase<ItemType>
+{
+}

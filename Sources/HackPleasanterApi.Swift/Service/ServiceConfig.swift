@@ -19,6 +19,7 @@
 
 import Foundation
 
+
 // サービス設定用ファイル
 public class ServiceConfig{
     
@@ -41,6 +42,5 @@ public class ServiceConfig{
         self.ApiKey = ApiKey
         
     }
-    
     
 }

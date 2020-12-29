@@ -18,15 +18,54 @@
  * */
 
 // リクエスト処理基底クラス
-public struct RequestBase : Codable
+public class RequestBase : Codable
 {
     /// <summary>
     /// 対象とするAPIバージョン
     /// </summary>
-    public var ApiVersion : String
+    public var ApiVersion : String?
     /// <summary>
     /// アクセス用のAPIキー
     /// </summary>
-    public var ApiKey : String
+    public var ApiKey : String?
+    
+    
+    // --- --- --- ---
+    // JSON変換処理
+    
+    enum CodingKeys: String, CodingKey {
+        case ApiVersion
+        case ApiKey
+    }
+    
+    // クライアント側で値が作れるように、
+    // nil引数で値を初期化できるように作成する
+    public  init() {
+    }
+    
+    public required init(from decoder: Decoder) throws {
+        
+        if let values = try? decoder.container(keyedBy: CodingKeys.self){
+            
+            self.ApiVersion = try? values.decode(String.self, forKey: .ApiVersion)
+            self.ApiKey = try? values.decode(String.self, forKey: .ApiKey)
+            
+        }
+        
+    }
+    
+    public  func encode(to encoder: Encoder) throws {
+        
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        
+        if let d = ApiVersion{
+            try container.encode(d,forKey: .ApiVersion)
+        }
+        
+        if let d = ApiKey{
+            try container.encode(d,forKey: .ApiKey)
+        }
+        
+    }
     
 }

@@ -19,36 +19,20 @@
 
 import Foundation
 
-/// <summary>
-/// 数値A～Z
-/// </summary>
-public class NumHash :Codable
-{
-    var NumA : Decimal?
-    var NumB : Decimal?
-    var NumC : Decimal?
-    var NumD : Decimal?
-    var NumE : Decimal?
-    var NumF : Decimal?
-    var NumG : Decimal?
-    var NumH : Decimal?
-    var NumI : Decimal?
-    var NumJ : Decimal?
-    var NumK : Decimal?
-    var NumL : Decimal?
-    var NumM : Decimal?
-    var NumN : Decimal?
-    var NumO : Decimal?
-    var NumP : Decimal?
-    var NumQ : Decimal?
-    var NumR : Decimal?
-    var NumS : Decimal?
-    var NumT : Decimal?
-    var NumU : Decimal?
-    var NumV : Decimal?
-    var NumW : Decimal?
-    var NumX : Decimal?
-    var NumY : Decimal?
-    var NumZ : Decimal?
+// 要素検索リクエスト
+public class InsertItemsRequest : ItemRawData{
     
+    
+    public required init(from decoder: Decoder) throws {
+        
+        try super.init( from : decoder )
+        
+    }
+    
+    public override init() {
+        
+        super.init()
+        
+    }
 }
+

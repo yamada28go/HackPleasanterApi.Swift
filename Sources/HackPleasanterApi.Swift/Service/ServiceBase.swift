@@ -23,7 +23,6 @@ import Alamofire
 // APIアクセスサービスの規定クラス
 public class ServiceBase{
     
-    
     /// <summary>
     /// 対象としているサイトID
     /// </summary>

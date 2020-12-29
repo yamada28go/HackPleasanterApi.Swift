@@ -17,28 +17,30 @@
  * under the License.
  * */
 
+import Foundation
+import Alamofire
+import Combine
 
-public class Attachments : Codable
-{
+// プリザンターのitem形式(アプリ内部で外部からアクセスするためのラッパとして使用する)
+public class PleasanterItem {
     
-    /// <summary>
-    /// string 添付ファイルのGUID
-    /// </summary>
-    var Guid : String?
+    /// 基礎item
+    /// このオブジェクトの生存期間中は必ずデータとして保持している想定
+    unowned let rawItem : ItemRawData
     
-    /// <summary>
-    /// 添付ファイル名
-    /// </summary>
-    var Name  : String?
+    public required init(  rawItem :  ItemRawData ){
+        
+        self.rawItem = rawItem
+        
+    }
     
-    /// <summary>
-    /// string Content Type
-    /// </summary>
-    var ContentType  : String?
-    
-    /// <summary>
-    ///  string ファイルデータをBase64エンコーディングしたもの
-    /// </summary>
-    var Base64  : String?
+    // 基本要素情報へのアクセス用
+    public var BasicData: ItemBasicData {
+        get {
+            // 公開が必要な一部に限定して情報を返す
+            return rawItem as ItemBasicData
+        }
+    }
     
 }
+
