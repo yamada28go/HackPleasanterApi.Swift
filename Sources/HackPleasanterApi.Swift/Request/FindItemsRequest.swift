@@ -28,7 +28,7 @@ public enum ColumnSorterType : String {
 }
 
 // カラム列のソート用キー種別
-public class ColumnSorterKey{
+open class ColumnSorterKey{
     
     // 識別文字列
     let DescriptionName : String
@@ -51,7 +51,7 @@ public class ColumnSorterKey{
 // --- 取得要素ソート関係
 
 // String形式の検査キー条件
-public class StringFindKey {
+open class StringFindKey {
     
     // 識別文字列
     let DescriptionName : String
@@ -92,7 +92,7 @@ public class StringFindKey {
 }
 
 // 数値型形式の検査キー条件
-public class NumberFindKey {
+open class NumberFindKey {
     
     // 識別文字列
     let DescriptionName : String
@@ -140,7 +140,7 @@ public class NumberFindKey {
 }
 
 // Bool型形式の検査キー条件
-public class BoolFindKey {
+open class BoolFindKey {
     
     // 識別文字列
     private let DescriptionName : String
@@ -172,7 +172,7 @@ public protocol DateFindKeyElementProtocol {
 
 
 // Date型形式の検査キー条件
-public class DateFindKey {
+open class DateFindKey {
     
     // 日付のみの場合
     public class DateKey : DateFindKeyElementProtocol{
