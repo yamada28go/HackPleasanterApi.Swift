@@ -19,7 +19,7 @@
 /// <summary>
 /// API戻り値の基底クラス
 /// </summary>
-public class ApiResultsBase : Decodable
+open class ApiResultsBase : Decodable
 {
     /// <summary>
     /// 戻り値ステータスコード

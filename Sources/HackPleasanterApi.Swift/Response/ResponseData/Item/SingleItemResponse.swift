@@ -18,7 +18,7 @@
  * */
 
 // 要素が1個のアイテムの戻り値
-public class SingleItemResponse<ItemType : PleasanterItem> : ItemResponseBase<ItemType>
+open class SingleItemResponse<ItemType : PleasanterItem> : ItemResponseBase<ItemType>
 {
     // 要素にアクセスする
     // Single系のAPIは1要素だけへのアクセスとなるはずなので

@@ -20,6 +20,6 @@
 /// <summary>
 /// 削除系統のAPI戻り値
 /// </summary>
-public class DeleteApiResults : ApiResultsBase
+open class DeleteApiResults : ApiResultsBase
 {
 }

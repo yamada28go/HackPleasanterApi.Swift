@@ -20,7 +20,7 @@
 /// <summary>
 /// 要素取得結果ベース
 /// </summary>
-public class ItemResponseBase<ItemType : PleasanterItem> : Codable
+open class ItemResponseBase<ItemType : PleasanterItem> : Codable
 {
     //---
     // APIとしての戻り値型

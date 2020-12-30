@@ -18,6 +18,6 @@
  * */
 
 // 複数アイテムの戻り値型
-public class MultipleItemResponse<ItemType : PleasanterItem> : ItemResponseBase<ItemType>
+open class MultipleItemResponse<ItemType : PleasanterItem> : ItemResponseBase<ItemType>
 {
 }

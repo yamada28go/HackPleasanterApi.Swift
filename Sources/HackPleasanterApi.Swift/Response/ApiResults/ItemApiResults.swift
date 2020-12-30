@@ -20,7 +20,7 @@
 /// <summary>
 /// Item系統のAPI戻り値
 /// </summary>
-public class ItemApiResults< ResponseItemType , ResponseType > : ApiResultsBase
+open class ItemApiResults< ResponseItemType , ResponseType > : ApiResultsBase
 where ResponseItemType :PleasanterItem,
       ResponseType : ItemResponseBase<ResponseItemType>
 {
@@ -29,7 +29,7 @@ where ResponseItemType :PleasanterItem,
         case Response
     }
     
-    required init(from decoder: Decoder) throws {
+    public required init(from decoder: Decoder) throws {
         
         try super.init(from: decoder)
         
