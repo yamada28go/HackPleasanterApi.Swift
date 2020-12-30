@@ -26,7 +26,7 @@ open class PleasanterItem {
     
     /// 基礎item
     /// このオブジェクトの生存期間中は必ずデータとして保持している想定
-    unowned let rawItem : ItemRawData
+    public unowned let rawItem : ItemRawData
     
     public required init(  rawItem :  ItemRawData ){
         
