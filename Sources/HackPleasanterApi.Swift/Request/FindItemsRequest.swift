@@ -346,6 +346,10 @@ open class ViewRequest : Encodable{
     // 検索
     public var Search : String?
     
+    public init(){
+        
+    }
+    
     //--- シリアライズ系統
     
     
@@ -360,7 +364,7 @@ open class ViewRequest : Encodable{
         case ColumnSorterHash
     }
     
-    var  derived : ColumnFilterHashGenerate?
+    public var  derived : ColumnFilterHashGenerate?
     
     public func encode(to encoder: Encoder) throws {
         
