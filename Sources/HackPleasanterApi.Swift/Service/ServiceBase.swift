@@ -21,7 +21,7 @@ import Foundation
 import Alamofire
 
 // APIアクセスサービスの規定クラス
-public class ServiceBase{
+open class ServiceBase{
     
     /// <summary>
     /// 対象としているサイトID

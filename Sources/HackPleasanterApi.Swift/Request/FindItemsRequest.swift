@@ -277,7 +277,7 @@ public protocol ColumnFilterHashGenerate{
 }
 
 // 要素検索リクエスト
-public class FindItemsRequest : RequestBase{
+open class FindItemsRequest : RequestBase{
     
     /*
      インターフェイスに合わせるために実装するが、
@@ -326,7 +326,7 @@ public class FindItemsRequest : RequestBase{
 }
 
 ///  検索条件を定義するviewオブジェクト
-public class ViewRequest : Encodable{
+open class ViewRequest : Encodable{
     
     // 未完了
     public var Incomplete : Bool?

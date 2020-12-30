@@ -22,7 +22,7 @@ import Alamofire
 import Combine
 
 // プリザンターのitem形式(アプリ内部で外部からアクセスするためのラッパとして使用する)
-public class PleasanterItem {
+open class PleasanterItem {
     
     /// 基礎item
     /// このオブジェクトの生存期間中は必ずデータとして保持している想定

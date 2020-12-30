@@ -20,7 +20,7 @@
 import Foundation
 
 // 要素検索リクエスト
-public class InsertItemsRequest : ItemRawData{
+open class InsertItemsRequest : ItemRawData{
     
     
     public required init(from decoder: Decoder) throws {

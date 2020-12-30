@@ -23,7 +23,7 @@ import Foundation
 /// <summary>
 /// Item形式基本データ構造
 /// </summary>
-public  class ItemBasicData: RequestBase
+open  class ItemBasicData: RequestBase
 {
     /// <summary>
     /// サイトID
@@ -203,7 +203,7 @@ public  class ItemBasicData: RequestBase
 /// <summary>
 /// Item形式基本データ構造
 /// </summary>
-public  class ItemRawData: ItemBasicData// ,Codable
+open  class ItemRawData: ItemBasicData// ,Codable
 {
     
     /// <summary>

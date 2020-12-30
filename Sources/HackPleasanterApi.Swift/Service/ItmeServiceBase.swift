@@ -38,7 +38,7 @@ public enum PleasanterAPIError : Error{
 
 
 /// 個別のItem要素にアクセスしてデータを取得する処理の基底クラス
-public class ItmeServiceBase< ItemType: PleasanterItem ,ResponseType:ItemResponseBase<ItemType> > : ServiceBase{
+open class ItmeServiceBase< ItemType: PleasanterItem ,ResponseType:ItemResponseBase<ItemType> > : ServiceBase{
     
     //イニシャライザ
     public override init(ServiceConfig : ServiceConfig , SiteId : Int64){

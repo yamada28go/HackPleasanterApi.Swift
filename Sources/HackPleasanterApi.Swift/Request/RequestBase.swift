@@ -18,7 +18,7 @@
  * */
 
 // リクエスト処理基底クラス
-public class RequestBase : Codable
+open class RequestBase : Codable
 {
     /// <summary>
     /// 対象とするAPIバージョン
